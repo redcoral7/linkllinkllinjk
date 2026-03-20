@@ -2,29 +2,47 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KimChul2 Image</title>
+    <title>랜덤 이미지 출력</title>
     <style>
-        /* 화면 중앙에 이미지를 배치하는 디자인 */
-        body {
-            margin: 0;
+        /* CSS: 이미지 출력 영역의 스타일을 정의합니다 */
+        #random-image-container {
+            width: 500px;
+            height: 500px;
+            border: 2px solid #333;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             display: flex;
-            justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            background-color: #000; /* 배경을 검정으로 해서 이미지를 강조 */
-        }
-        img {
-            max-width: 90%;
-            max-height: 90vh;
-            box-shadow: 0 0 20px rgba(255,255,255,0.2);
-            border-radius: 8px;
+            justify-content: center;
+            font-family: sans-serif;
+            color: white;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
         }
     </style>
 </head>
 <body>
 
-    <img src="kimchul2.png" alt="Custom Image">
+    <div id="random-image-container">
+        이미지 로딩 중...
+    </div>
+
+    <script>
+        // 1. 이미지 URL 배열 생성
+        const images = [
+            'https://raw.githubusercontent.com/redcoral7/linkllinkllinjk/main/kimchul1.PNG',
+            'https://raw.githubusercontent.com/redcoral7/linkllinkllinjk/main/kimchul2.PNG'
+        ];
+
+        // 2. 무작위 인덱스 선택 (0 또는 1)
+        const randomIndex = Math.floor(Math.random() * images.length);
+        const selectedImage = images[randomIndex];
+
+        // 3. CSS 조작: 해당 요소의 background-image 변경
+        const container = document.getElementById('random-image-container');
+        container.style.backgroundImage = `url('${selectedImage}')`;
+        container.textContent = ''; // 로딩 텍스트 제거
+    </script>
 
 </body>
 </html>
