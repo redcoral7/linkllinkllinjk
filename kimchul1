@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KimChul2 Image</title>
+    <style>
+        /* 화면 중앙에 이미지를 배치하는 디자인 */
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #000; /* 배경을 검정으로 해서 이미지를 강조 */
+        }
+        img {
+            max-width: 90%;
+            max-height: 90vh;
+            box-shadow: 0 0 20px rgba(255,255,255,0.2);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="kimchul2.png" alt="Custom Image">
+
+</body>
+</html>
